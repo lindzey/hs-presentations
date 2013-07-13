@@ -1,3 +1,4 @@
 *~
 Makefiles/filesystem1
-Makefile/tmp*
+Makefiles/tmp*
+*/.DS_Store
