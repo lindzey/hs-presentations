@@ -1,0 +1,6 @@
+jan_input = $(wildcard */*/jan/*)
+jan_output = $(patsubst %.input,%.output, $(jan_input))
+all : $(jan_output)
+
+%.output : %.input 
+	cp $< $@

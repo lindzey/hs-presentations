@@ -1,0 +1,2 @@
+foo_%.output : filesystem1/%/march/data.input
+	cp $< $@

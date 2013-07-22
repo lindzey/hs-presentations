@@ -1,0 +1,13 @@
+outfiles = $(shell cat makefile7.filelist)
+
+all: ${outfiles}
+
+%.output.d : ;
+	echo $*.output : $*.input > $@
+
+include $(patsubst %,%.d,${outfiles})
+
+%.output : %.output.d
+	@echo
+	@echo $@ : $^
+	rm $@.d	

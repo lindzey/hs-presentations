@@ -1,0 +1,5 @@
+all: filesystem3/foo.output
+
+.SECONDEXPANSION:
+%.output : $$(shell cat $$@.dependency)
+	echo dependencies are: $^
