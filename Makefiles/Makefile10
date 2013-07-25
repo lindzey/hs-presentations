@@ -1,0 +1,18 @@
+outfiles = $(shell cat makefile8.filelist)
+all: ${outfiles}
+
+dotfile = makefile10.txt
+
+%.output.d : 
+	@export year=$$(basename $$(dirname $$(dirname $*.output))); \
+	export month=$$(basename $$(dirname $*.output)); \
+	export basedir=$$(dirname $$(dirname $$(dirname $*.output))); \
+	export dep1=$${basedir}/$${year}/stats.txt;\
+	export dep2=$${basedir}/$${month}.dat; \
+	echo $*.output : $*.input $${dep1} $${dep2} > $@
+
+include $(patsubst %,%.d,${outfiles})
+
+%.output : ;
+	@echo $@ : $^ >> ${dotfile}
+	@rm $@.d	

@@ -1,0 +1,7 @@
+outfiles = $(shell cat makefile8.filelist)
+all: ${outfiles}
+
+.SECONDEXPANSION:
+%.output : %.input $$(shell dirname $$(shell dirname $$@))/stats.txt
+	@echo
+	@echo $@ : $^
