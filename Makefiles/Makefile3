@@ -1,4 +1,4 @@
-all : filesystem2/2003/feb/data.output 
+all : filesystem/2003/feb/data.output 
 
 # $year/$month/data.output depends on 
 #	* $year/$month/data.input
@@ -12,7 +12,9 @@ foo = $(foreach target,$(all),$(shell ls -lh $(target)))
 
 THE_DAT=$(patsubst, /data.output,.dat,$@)
 #%.output : %.data
-%.output : $(subst /feb,,%.input)
+
+%.output : $(subst /feb,,%.input) 
 	echo $< foo bar $^ baz
 	echo $(THE_DAT)
 	echo $(foo)
+	echo $(dat_rule)

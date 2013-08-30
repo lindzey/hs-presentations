@@ -1,4 +1,4 @@
-all : filesystem1/2003/feb/data.output filesystem1/2004/march/data.output
+all : filesystem/2003/feb/data.output filesystem/2004/march/data.output
 
 %.output : %.input
 	cp $< $@

@@ -14,4 +14,4 @@ include $(patsubst %,%.d,${outfiles})
 %.output : %.output.d
 	@echo
 	@echo $@ : $^
-	@rm $@.d	
+#	@rm $@.d	
